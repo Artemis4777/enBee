@@ -1,25 +1,27 @@
 const { app, BrowserWindow } = require("electron");
-const path = require('path')
+const path = require("path");
+if (require("electron-squirrel-startup")) app.quit();
 
 //call a window
 const createWindow = () => {
 	const win = new BrowserWindow({
-		width: 800,
-		height: 600,
-        webPreferences: {
-            preload: path.join(__dirname, 'preload.js')
-          }
+		width: 1400,
+		height: 800,
+		webPreferences: {
+			preload: path.join(__dirname, "preload.js"),
+		},
 	});
 
-	win.loadFile("index.html");
-    //mainWindow.webContents.openDevTools()
+	win.loadURL("https://jmp5b7spen.us-east-1.awsapprunner.com/");
+	//win.loadFile("index.html");
+	//mainWindow.webContents.openDevTools()
 };
 
 //open
 app.whenReady().then(() => {
 	createWindow();
 
-    //open window on mac
+	//open window on mac
 	app.on("activate", () => {
 		if (BrowserWindow.getAllWindows().length === 0) createWindow();
 	});
