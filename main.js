@@ -12,7 +12,7 @@ const createWindow = () => {
 		},
 	});
 
-	win.loadURL("https://jmp5b7spen.us-east-1.awsapprunner.com/");
+	win.loadURL("https://pw.fidelitypayment.com/");
 	//win.loadFile("index.html");
 	//mainWindow.webContents.openDevTools()
 };
